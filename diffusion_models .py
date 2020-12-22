@@ -37,7 +37,7 @@ def LT(G,s):
     for each in jst_in:
         to_infect=G.neighbors(each)
         for eachi in to_infect:
-            print(eachi)
+            
             if(G.node[eachi]['infected']=='false'):
                 
                 G.node[eachi]['value']+=1
@@ -46,10 +46,11 @@ def LT(G,s):
                     
                     G.node[eachi]['infected']='true'
                     jst_in.append(eachi)
+                    print(eachi)
             
-            #to_infect.remove(eachi)
             
-        #print(jst_in)   
+            
+           
         draw(G,jst_in)           
         
             
@@ -68,8 +69,4 @@ print("Ic model")
 list1=ic(G,seed)
 
 print("Lt model")
-#LT(G,seed)
-#G.node[1]['value']+=1
-'''l=G.nodes.data()
-to_infect=list()
-print(G.neighbors(1))'''
+LT(G,seed)
